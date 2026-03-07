@@ -1,0 +1,20 @@
+# Backend
+interior_design/target/
+interior_design/*.log
+interior_design/.mvn/
+
+# Frontend
+client/node_modules/
+client/.vite/
+client/dist/
+client/build/
+client/.env*
+client/npm-debug.log*
+client/yarn-error.log*
+
+# Common / Editors
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
