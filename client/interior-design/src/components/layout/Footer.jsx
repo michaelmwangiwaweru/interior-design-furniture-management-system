@@ -15,7 +15,7 @@ function Footer() {
                   <p>&copy; {new Date().getFullYear()} 
 
 
-                    Interior Design Furniture. All rights reserved.</p>
+                    Whitewise Interior Furnitures. All rights reserved.</p>
               </Col>
           </Row>
       </Container>

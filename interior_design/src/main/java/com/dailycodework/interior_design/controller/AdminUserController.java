@@ -12,11 +12,19 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
+
 import org.springframework.web.multipart.MultipartFile;
 
 import java.security.Principal;
 import java.time.LocalDateTime;
 import java.util.List;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.web.server.ResponseStatusException;
+
+import java.io.IOException;
+import com.dailycodework.interior_design.repository.UserRepository;
 
 @RestController
 @RequestMapping("/admin/users")
@@ -26,6 +34,7 @@ public class AdminUserController {
 
     private final UserService userService;
     private final LoginHistoryRepository loginHistoryRepository;
+    private final UserRepository userRepository;
 
     // Get all users
     @GetMapping
@@ -77,8 +86,39 @@ public class AdminUserController {
 
         AdminProfileResponse response = new AdminProfileResponse(user, loginTimes.size(), loginTimes);
         return ResponseEntity.ok(response);
-    }}
+    }
 
+// Upload or update the current admin's profile picture
+@PostMapping(
+        value = "/me/profile-picture",
+        consumes = MediaType.MULTIPART_FORM_DATA_VALUE
+)
+public ResponseEntity<?> uploadProfilePicture(
+        @AuthenticationPrincipal User user,
+        @RequestParam("file") MultipartFile file
+) throws IOException {
+
+    if (file.isEmpty()) {
+        throw new ResponseStatusException(
+                HttpStatus.BAD_REQUEST,
+                "Please select an image."
+        );
+    }
+
+    if (file.getContentType() == null ||
+            !file.getContentType().startsWith("image/")) {
+        throw new ResponseStatusException(
+                HttpStatus.BAD_REQUEST,
+                "Only image files are allowed."
+        );
+    }
+
+    // Store the uploaded image in the current admin's User record
+    user.setProfilePicture(file.getBytes());
+    userRepository.save(user);
+
+    return ResponseEntity.ok("Profile picture updated successfully.");
+}}
     // Upload or update profile picture
 
 

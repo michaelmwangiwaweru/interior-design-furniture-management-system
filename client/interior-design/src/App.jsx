@@ -36,7 +36,9 @@ import AdminDashboard from './components/admin/AdminDashboard';
 import UserDashboard from './components/admin/UserDashboard';
 import BillingForm  from "./components/service/BillingForm";
 import PaymentPage  from "./components/service/PaymentPage";
-
+import AboutUs from "./components/home/AboutUs";
+import Shopbetter from "./components/home/Shopbetter";
+import ActivityHistory from "./components/admin/ActivityHistory";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -75,6 +77,13 @@ function App() {
 
 <Route path="/billing" element={<BillingForm />} />
         <Route path="/payment" element={<PaymentPage />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/shopbetter" element={<Shopbetter />} />
+        
+        <Route
+  path="/admin/activity-history"
+  element={<ActivityHistory />}
+/>
 
 
         </Routes>

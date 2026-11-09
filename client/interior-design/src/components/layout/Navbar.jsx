@@ -2,35 +2,36 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import logo from "../image/logo.png";
+import logo from "../image/logo.jpg";
 
 const Navbar = () => {
   const links = [
     { to: "/", label: "Home" },
-    { to: "/cardproduct", label: " Shop" },
-     { to: "/catalog", label: " catalogform" },
-    { to: "/browse-all-rooms", label: "Browse All products" },
-    { to: "/customer-services", label: "Customer Services" },
     
-     { to: "/loginpage", label: "Login" },
-      { to: "/signup", label: "Sign Up" },
-       { to: "/dashboard2", label: "dashboard" },
-       { to: "/admin/dashboard", label: "dashboardadmin" },
-       { to: "/user/dashboard", label: "dashboarduser" },
+     
+    
+    { to: "/shopbetter", label: "shop" },
+    
+     
+      
+       
+       
+       
 
     // Hamburger menu starts here
-    { to: "/sales", label: "Sales" },
-     { to: "/", label: "Home" },
-    { to: "/orders", label: "Orders" },
-    { to: "/dashboard", label: "dashboard" },
-    { to: "/admin", label: "Admin Panel" },
-    { to: "/existing-rooms", label: "Existing products" },
-    { to: "/products", label: " products" },
-    { to: "/inventory", label: " inventory" },
-    { to: "/find-booking", label: " My order" },
-    { to: "/finishedproduct", label: " finished products" },
     
-    { to: "/add-room", label: "add product" },
+     
+    
+     { to: "/about-us", label: " About us" },
+    { to: "/loginpage", label: "Login" },
+    
+    
+    
+    
+    
+    
+    
+    
     
   ];
 
@@ -42,7 +43,7 @@ const Navbar = () => {
       {/* NAVBAR HEADER */}
       <nav
         className="navbar navbar-dark sticky-top shadow"
-        style={{ backgroundColor: "#457b9d" }}
+        style={{ backgroundColor: "#111827" }}
       >
         <div className="container d-flex justify-content-between align-items-center">
 

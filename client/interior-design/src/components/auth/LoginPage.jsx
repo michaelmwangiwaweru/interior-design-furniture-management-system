@@ -111,9 +111,7 @@ function LoginPage() {
             {loading ? 'Signing in...' : 'Sign In'}
           </button>
 
-          <div className="text-center">
-            <p>Not a member? <a href="/signup">Register here</a></p>
-          </div>
+         
         </MDBContainer>
       </div>
     </div>

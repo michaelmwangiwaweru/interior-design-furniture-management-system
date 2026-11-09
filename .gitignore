@@ -18,3 +18,19 @@ client/yarn-error.log*
 *.iml
 .DS_Store
 Thumbs.db
+
+# Backend environment and secrets
+interior_design/.env
+interior_design/application-local.properties
+
+# Uploaded files
+interior_design/uploads/*
+
+# Build files
+**/target/
+**/node_modules/
+
+# Environment files
+.env
+.env.*
+!.env.example
